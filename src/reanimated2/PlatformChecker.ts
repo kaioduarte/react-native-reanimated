@@ -12,6 +12,10 @@ export function isWeb(): boolean {
   return Platform.OS === 'web';
 }
 
+export function isMacos(): boolean {
+  return Platform.OS === 'macos';
+}
+
 export function shouldBeUseWeb() {
   return isJest() || isChromeDebugger() || isWeb();
 }

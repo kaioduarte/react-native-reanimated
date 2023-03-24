@@ -1,9 +1,9 @@
 import reanimatedJS from '../js-reanimated';
-import { shouldBeUseWeb } from '../PlatformChecker';
+import { isMacos, shouldBeUseWeb } from '../PlatformChecker';
 import { NativeReanimated } from './NativeReanimated';
 
 let exportedModule;
-if (shouldBeUseWeb()) {
+if (shouldBeUseWeb() || isMacos()) {
   exportedModule = reanimatedJS;
 } else {
   exportedModule = new NativeReanimated();
